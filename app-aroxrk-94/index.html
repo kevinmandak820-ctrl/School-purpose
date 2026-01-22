@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FocusFlow is a minimalist to-do app that helps you capture, prioritize, and complete tasks with ease.">
+  <meta name="keywords" content="to-do list, productivity, task manager, checklist">
+  <title>FocusFlow • To-Do App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-top">
+      <a class="anycoder-link" href="https://huggingface.co/spaces/akhaliq/anycoder" target="_blank" rel="noopener">Built with anycoder</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">
+        <span class="sun" aria-hidden="true">☀️</span>
+        <span class="moon" aria-hidden="true">🌙</span>
+      </button>
+    </div>
+    <div class="hero">
+      <div>
+        <p class="eyebrow">Productive by design</p>
+        <h1>FocusFlow</h1>
+        <p class="subtitle">Organize your day with a light, distraction-free to-do list that keeps you in the flow.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel" aria-label="Create a task">
+      <form id="todoForm" class="todo-form">
+        <label class="sr-only" for="todoInput">Task name</label>
+        <input id="todoInput" name="task" type="text" placeholder="Add a task and hit Enter…" autocomplete="off" required>
+        <button type="submit" class="btn primary">Add task</button>
+      </form>
+      <div class="meta">
+        <p><span id="activeCount">0</span> tasks remaining</p>
+        <button id="clearCompleted" class="btn ghost" type="button">Clear completed</button>
+      </div>
+    </section>
+
+    <section class="panel" aria-label="Task list">
+      <div class="filters" role="group" aria-label="Filter tasks">
+        <button class="filter-btn active" type="button" data-filter="all">All</button>
+        <button class="filter-btn" type="button" data-filter="active">Active</button>
+        <button class="filter-btn" type="button" data-filter="completed">Completed</button>
+      </div>
+      <ul id="todoList" class="todo-list" aria-live="polite"></ul>
+      <p class="empty-state" id="emptyState">No tasks yet. Start by adding one above.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> FocusFlow. Stay organized, stay focused.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
